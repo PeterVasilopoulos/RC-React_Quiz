@@ -16,7 +16,7 @@ function reducer(state, action) {
   if(action.type === 'setCount') {
     return action.payload
   }
-}
+} 
 
 
 function DateCounter() {
