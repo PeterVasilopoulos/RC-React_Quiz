@@ -72,6 +72,14 @@ function reducer(state, action) {
         status: 'finished',
         highscore: state.points > state.highscore ? state.points : state.highscore 
       }
+    
+    // when user restarts the quiz
+    case 'restart':
+      return {
+        ...initialState,
+        questions: state.questions,
+        status: 'ready'
+      }
 
     // default case throws error
     default:
@@ -142,6 +150,7 @@ export default function App() {
             points={points}
             maxPossiblePoints={maxPossiblePoints}
             highscore={highscore}
+            dispatch={dispatch}
           />
         }
       </Main>
